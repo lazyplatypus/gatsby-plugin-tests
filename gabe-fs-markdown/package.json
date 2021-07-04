@@ -6,7 +6,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "bench": "rm -rf generated_articles; gatsby clean; N=${N:-512} node gen.js; CI=1 node --max_old_space_size=${M:-2}000 node_modules/.bin/gatsby build",
+    "bench": "rm -rf generated_articles; gatsby clean; N=${N:-512} node gen.js; CI=1 node --max_old_space_size=${M:-2}000 node_modules/.bin/gatsby build; gatsby build --open-tracing-config-file zipkin-local.js --graphql-tracing",
     "build": "gatsby build --open-tracing-config-file zipkin-local.js --graphql-tracing",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
